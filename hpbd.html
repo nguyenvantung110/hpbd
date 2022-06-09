@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birth Day</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body {
+            margin: 20px;
+            background: hsl(70, 31%, 85%);
+            text-align: center;
+            background-image: linear-gradient(90deg, #41c0fb, #74f66a);
+            font-family: 'Pacifico', cursive;
+        }
+
+        .balloon {
+            display: inline-block;
+            width: 100px;
+            height: 125px;
+            background: hsl(215, 50%, 65%);
+            border-radius: 80%;
+            position: relative;
+            box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
+            margin: 200px 30px;
+            transition: transform 0.5s ease;
+            z-index: 10;
+            animation: balloons 4s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+
+        @keyframes balloons {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-4deg);
+            }
+
+            50% {
+                transform: translateY(-25px) rotate(4deg);
+            }
+        }
+
+
+        .balloon:before {
+            content: "▲";
+            font-size: 20px;
+            color: hsl(215, 30%, 50%);
+            display: block;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            bottom: -12px;
+            z-index: -100;
+        }
+
+        .balloon:after {
+            display: inline-block;
+            top: 130px;
+            position: absolute;
+            height: 150px;
+            width: 1px;
+            margin: 0 auto;
+            content: "";
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .balloon:nth-child(2) {
+            background: hsl(245, 40%, 65%);
+            animation-duration: 3.5s;
+        }
+
+        .balloon:nth-child(2):before {
+            color: hsl(245, 40%, 65%);
+        }
+
+        .balloon:nth-child(3) {
+            background: hsl(139, 50%, 60%);
+            animation-duration: 3s;
+        }
+
+        .balloon:nth-child(3):before {
+            color: hsl(139, 30%, 50%);
+        }
+
+        .balloon:nth-child(4) {
+            background: hsl(59, 50%, 58%);
+            animation-duration: 4.5s;
+        }
+
+        .balloon:nth-child(4):before {
+            color: hsl(59, 30%, 52%);
+        }
+
+        .balloon:nth-child(5) {
+            background: hsl(23, 55%, 57%);
+            animation-duration: 5s;
+        }
+
+        .balloon:nth-child(5):before {
+            color: hsl(23, 44%, 46%);
+        }
+
+        .happy-text {
+            font-family: 'Pacifico', cursive;
+            font-size: 50px;
+            letter-spacing: 6px;
+            font-weight: 800;
+            color: linear-gradient(90deg, #86cff1, #c0eeff);
+            margin-top: 200px;
+            animation: balloons 4s ease-in-out infinite;
+        }
+
+        .happy-text span {
+            animation: balloons 4s ease-in-out infinite;
+            animation-duration: 1s;
+            cursor: pointer;
+        }
+
+        .happy-text:hover {
+            transform: translateY(50px);
+            -ms-transform: rotate(20deg);
+            /* IE 9 */
+            -webkit-transform: rotate(20deg);
+            /* Safari */
+            transform: rotate(20deg);
+        }
+
+        /*--------------------------------*/
+        @-webkit-keyframes snowflakes-fall {
+            0% {
+                top: -10%
+            }
+
+            100% {
+                top: 100%
+            }
+        }
+
+        @-webkit-keyframes snowflakes-shake {
+
+            0%,
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0)
+            }
+
+            50% {
+                -webkit-transform: translateX(80px);
+                transform: translateX(80px)
+            }
+        }
+
+        @keyframes snowflakes-fall {
+            0% {
+                top: -10%
+            }
+
+            100% {
+                top: 100%
+            }
+        }
+
+        @keyframes snowflakes-shake {
+
+            0%,
+            100% {
+                transform: translateX(0)
+            }
+
+            50% {
+                transform: translateX(80px)
+            }
+        }
+
+        .snowflake {
+            color: #fff;
+            font-size: 4em;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 0 5px #000;
+            position: fixed;
+            top: -10%;
+            z-index: 9999;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: default;
+            -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+            -webkit-animation-duration: 10s, 3s;
+            -webkit-animation-timing-function: linear, ease-in-out;
+            -webkit-animation-iteration-count: infinite, infinite;
+            -webkit-animation-play-state: running, running;
+            animation-name: snowflakes-fall, snowflakes-shake;
+            animation-duration: 10s, 3s;
+            animation-timing-function: linear, ease-in-out;
+            animation-iteration-count: infinite, infinite;
+            animation-play-state: running, running;
+        }
+
+        .snowflake:nth-of-type(0) {
+            left: 1%;
+            -webkit-animation-delay: 0s, 0s;
+            animation-delay: 0s, 0s
+        }
+
+        .snowflake:nth-of-type(1) {
+            left: 10%;
+            -webkit-animation-delay: 1s, 1s;
+            animation-delay: 1s, 1s
+        }
+
+        .snowflake:nth-of-type(2) {
+            left: 20%;
+            -webkit-animation-delay: 6s, .5s;
+            animation-delay: 6s, .5s
+        }
+
+        .snowflake:nth-of-type(3) {
+            left: 30%;
+            -webkit-animation-delay: 4s, 2s;
+            animation-delay: 4s, 2s
+        }
+
+        .snowflake:nth-of-type(4) {
+            left: 40%;
+            -webkit-animation-delay: 2s, 2s;
+            animation-delay: 2s, 2s
+        }
+
+        .snowflake:nth-of-type(5) {
+            left: 50%;
+            -webkit-animation-delay: 8s, 3s;
+            animation-delay: 8s, 3s
+        }
+
+        .snowflake:nth-of-type(6) {
+            left: 60%;
+            -webkit-animation-delay: 6s, 2s;
+            animation-delay: 6s, 2s
+        }
+
+        .snowflake:nth-of-type(7) {
+            left: 70%;
+            -webkit-animation-delay: 2.5s, 1s;
+            animation-delay: 2.5s, 1s
+        }
+
+        .snowflake:nth-of-type(8) {
+            left: 80%;
+            -webkit-animation-delay: 1s, 0s;
+            animation-delay: 1s, 0s
+        }
+
+        .snowflake:nth-of-type(9) {
+            left: 90%;
+            -webkit-animation-delay: 3s, 1.5s;
+            animation-delay: 3s, 1.5s
+        }
+
+        .snowflake:nth-of-type(10) {
+            left: 25%;
+            -webkit-animation-delay: 2s, 0s;
+            animation-delay: 2s, 0s
+        }
+
+        .snowflake:nth-of-type(11) {
+            left: 65%;
+            -webkit-animation-delay: 4s, 2.5s;
+            animation-delay: 4s, 2.5s
+        }
+
+        .btn-more {
+            margin-top: 100px;
+            background: linear-gradient(90deg, #86cff1, #0aaae4);
+            width: 300px;
+            height: 50px;
+            margin: 100px auto;
+            line-height: 50px;
+            border-radius: 5px;
+            transition: 0.5s ease;
+        }
+
+        .btn-more a {
+            text-decoration: none;
+            color: #f84842;
+            font-family: 'Pacifico', cursive;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .btn-more:hover {
+            letter-spacing: 10px;
+            width: 250px;
+        }
+
+        .date-of-birth {
+            width: 50%;
+            margin: 0px auto;
+            margin-top: 300px;
+            margin-bottom: 100px;
+            display: flex;
+            flex-direction: row;
+            height: 100px;
+        }
+
+        .date,
+        .year {
+            width: 50%;
+            line-height: 100px;
+            color: #f84842;
+            font-family: 'Pacifico', cursive;
+            font-size: 100px;
+            font-weight: 600;
+        }
+
+        .date {
+            border-right: 5px solid #f84842;
+
+        }
+
+        .year {
+            border-left: 5px solid #f84842;
+        }
+
+        @media only screen and (max-width: 1080px) {
+            .date-of-birth {
+                width: 100%;
+            }
+        }
+
+        .happy-area {
+            width: 35%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .front {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        img {
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .img1,
+        .img2,
+        .img3,
+        .img4 {
+            position: absolute;
+        }
+
+        .img1 {
+            z-index: 10;
+            transition: 1s ease;
+        }
+
+        .img2 {
+            z-index: 5;
+        }
+
+        .img3 {
+            z-index: -1;
+        }
+
+        .img4 {
+            top: -179px;
+            display: none;
+            transition: 0.5s ease;
+        }
+
+        .main-text {
+            padding: 20px;
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 200px;
+        }
+
+        .m-text {
+            border: 2px dashed #b1154a;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .happy-area:hover #img1 {
+            display: none;
+        }
+
+        .happy-area:hover #img4 {
+            display: block;
+            transition-delay: 2s;
+        }
+
+        .happy-area:hover #img2 {
+            top: 800px;
+        }
+
+        .happy-area:hover .main-text {
+            transform: translateY(1000px);
+        }
+
+
+
+        @keyframes dis {
+
+            0% {
+                opacity: 1;
+                top: 0;
+            }
+
+            100% {
+                top: 8000px;
+                opacity: 0;
+            }
+        }
+
+        .container {
+            width: 600px;
+            height: 200px;
+            background: #d9dbbc75;
+            border-radius: 30px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 60px;
+            color: white;
+            padding-top: 60px;
+        }
+
+        /**/
+        .box {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 50px auto;
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            inset: -10px 140px;
+            background: linear-gradient(315deg, #dd0b8c, #0a83ec);
+            transition: 0.4s;
+            animation: animate 3s linear infinite;
+        }
+
+        .box:hover::before {
+            inset: -20px 0px;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box::after {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            background: #0f1846;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .content {
+            position: absolute;
+            inset: 30px;
+            border: 3px solid #0a83ec;
+            z-index: 3;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .content img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .box:hover .content img {
+            opacity: 0;
+        }
+
+        .content h2 {
+            position: relative;
+            font-size: 1.5em;
+            text-align: center;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .content h2 span {
+            font-weight: 300;
+            font-size: 0.75em;
+        }
+
+        .content a {
+            position: relative;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #fff;
+            color: #0f1846;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 1.25em;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: 0.4s;
+        }
+
+        .content a:hover {
+            letter-spacing: 0.3em;
+        }
+
+        .name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .name h2 {
+            display: flex;
+            color: transparent;
+            font-size: 100px;
+        }
+
+        .name h2 span {
+            animation: animate2 3s linear infinite;
+            animation-delay: calc(0.1s * var(--i));
+        }
+
+        @keyframes animate2 {
+            0% {
+                color: #fff;
+                filter: blur(2px) hue-rotate(0deg);
+                text-shadow: 0 0 10px #00b3ff,
+                    0 0 20px #00b3ff,
+                    0 0 40px #00b3ff,
+                    0 0 80px #00b3ff,
+                    0 0 120px #00b3ff,
+                    0 0 200px #00b3ff,
+                    0 0 300px #00b3ff,
+                    0 0 400px #00b3ff;
+            }
+
+            30%,
+            70% {
+                color: #fff;
+                filter: blur(2px) hue-rotate(360deg);
+                text-shadow: 0 0 10px #00b3ff,
+                    0 0 20px #00b3ff,
+                    0 0 40px #00b3ff,
+                    0 0 80px #00b3ff,
+                    0 0 120px #00b3ff,
+                    0 0 200px #00b3ff,
+            }
+
+            100% {
+                color: transparent;
+                box-shadow: none;
+                filter: blur(2px) hue-rotate(0deg);
+            }
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .cd-time {
+            color: #f84842;
+            font-size: 50px;
+        }
+
+        /**/
+        .container2 {
+            display: flex;
+            /*   border:1px solid red; */
+            height: 100%;
+            align-items: center;
+        }
+
+        svg {
+            display: block;
+            font: 10.5em 'Montserrat';
+            width: 960px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .text-copy {
+            fill: none;
+            stroke: white;
+            stroke-dasharray: 6% 29%;
+            stroke-width: 5px;
+            stroke-dashoffset: 0%;
+            animation: stroke-offset 6.5s infinite linear;
+        }
+
+        .text-copy:nth-child(1) {
+            stroke: #f90e05;
+            animation-delay: -1;
+        }
+
+        .text-copy:nth-child(2) {
+            stroke: #f84842;
+            animation-delay: -2s;
+        }
+
+        .text-copy:nth-child(3) {
+            stroke: #e2514c;
+            animation-delay: -3s;
+        }
+
+        .text-copy:nth-child(4) {
+            stroke: #f84842;
+            animation-delay: -4s;
+        }
+
+        .text-copy:nth-child(5) {
+            stroke: #f84842;
+            animation-delay: -5s;
+        }
+
+        @keyframes stroke-offset {
+            100% {
+                stroke-dashoffset: -35%;
+            }
+        }
+
+        text {
+            font-size: 100px;
+            font-family: 'Pacifico', cursive;
+        }
+
+        #demo {
+            font-size: 70px;
+            color: #f84842;
+        }
+
+        .m-text {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--balloon-->
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <!--Image-->
+    <div class="box">
+        <div class="content">
+            <img src="img1.jpg">
+            <h2>Hoàng Mai Anh<br> <br><span>chubby</span></h2>
+        </div>
+    </div>
+    <div class="name">
+        <h2>
+            <span style="--i:1;">H</span>
+            <span style="--i:2;">o</span>
+            <span style="--i:3;">à</span>
+            <span style="--i:4;">n</span>
+            <span style="--i:5;">g</span>
+            <span style="--i:6;margin-left: 20px;">M</span>
+            <span style="--i:7;">a</span>
+            <span style="--i:8;">i</span>
+            <span style="--i:9;margin-left: 20px;">A</span>
+            <span style="--i:10;">n</span>
+            <span style="--i:11;">h</span>
+        </h2>
+    </div>
+
+    <!-- TIme-->
+    <br> <br> <br> <br>
+    <div class="container">
+        <p id="demo"></p>
+    </div>
+    <div class="container2">
+        <svg viewBox="0 0 960 300">
+            <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="80%">Countdown Time</text>
+            </symbol>
+
+            <g class="g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+            </g>
+        </svg>
+    </div>
+    <div id="date-of-birth" class="date-of-birth">
+        <div class="date">
+            10/06
+        </div>
+        <div class="year">
+            2004
+        </div>
+    </div>
+    <div id="happy-area" class="happy-area">
+        <!-- <div id="img2" class="img2">
+            <img
+                src="https://thaithay.com/wp-content/themes/honeymoon/vamtam/assets/images/envelope/envelope_front.png">
+        </div>
+        <div id="img1" class="img1">
+            <img src="https://thaithay.com/wp-content/themes/honeymoon/vamtam/assets/images/envelope/env_top_top.png">
+        </div>
+        <div id="img3" class="img3">
+            <img src="	https://thaithay.com/wp-content/themes/honeymoon/vamtam/assets/images/envelope/env_back.jpg">
+        </div>
+        <div id="img4" class="img4">
+            <img src="https://thaithay.com/wp-content/themes/honeymoon/vamtam/assets/images/envelope/env_top.png">
+        </div> -->
+    </div>
+    <div class="main-text">
+        <div class="m-text">
+            Đây là bộ chuyển đổi phông chữ được phát triển bởi AhaChat, hãy nhập văn bản mà bạn muốn chuyển đổi font vào
+            ô
+            bên dưới sau đó sao chép và dán chúng vào Facebook. Bộ công cụ này hoạt động hầu hết mọi nơi mà Facebook cho
+            phép nhập văn bản: cập nhật trạng thái, tin nhắn, tiểu sử, bình luận... Tất cả các font chữ bên dưới đều là
+            font
+            Unicode nên chúng sẽ hiển thị với hầu hết mọi nơi bạn có thể dán văn bản, ví dụ như các trang mạng xã hội,
+            các
+            bình luận, diễn đàn, tài liệu... chứ không chỉ riêng gì trên nền tảng Facebook.
+        </div>
+    </div>
+
+    </div>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+    <script>
+        // Đặt ngày đếm ngược
+        //var countDownDate = new Date("June 9, 2022 24:00:00").getTime();
+        var countDownDate = new Date("June 9, 2022 21:16:00").getTime();
+        // Cập nhật đếm ngược sau mỗi 1 giây
+        var x = setInterval(function () {
+            // Nhận ngày và giờ hôm nay
+            var now = new Date().getTime();
+
+            // Tìm khoảng cách giữa bây giờ và ngày đếm ngược
+            var distance = countDownDate - now;
+
+            // Tính toán thời gian cho ngày, giờ, phút và giây
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Xuất kết quả trong phần tử có id = "demo"
+            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // Nếu quá trình đếm ngược kết thúc, hãy viết một số văn bản
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "Happy Birthday";
+            }
+        }, 1000);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script>
+    </script>
+</body>
+
+</html>
